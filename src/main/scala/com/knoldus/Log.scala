@@ -1,8 +1,7 @@
 package com.knoldus
 
-class Log extends LogTrait { // Inherited LogTrait
+class Log extends LogTrait {
 
   // Used S-Interpolator
-  override def log(message: String, level: String = "INFO"): String = s"[$level]: $message"
-
+  override def log(message: String, level: String = "INFO"): String = s"[${level.toUpperCase}]: $message"
 }

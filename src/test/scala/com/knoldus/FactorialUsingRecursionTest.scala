@@ -1,18 +1,18 @@
 package com.knoldus
+
 import org.scalatest.flatspec.AnyFlatSpec
-class FactorialUsingRecursionTest extends AnyFlatSpec{
 
-  "A condition" should "be valid if 5 will returns 120" in {
-    val obj = new FactorialUsingRecursion()
-    assert(120 == obj.factorial(5))
-    }
-  "A condition" should "be valid if 0 will returns 1" in {
-    val obj = new FactorialUsingRecursion()
-    assert(1 == obj.factorial(0))
-  }
-  "A condition" should "be invalid if 6 will returns 500" in {
-    val obj = new FactorialUsingRecursion()
-    assert(!(500 == obj.factorial(6)))
-  }
+class FactorialUsingRecursionTest extends AnyFlatSpec {
 
+  val factorial = new FactorialUsingRecursion
+
+  "A condition" should "be correct if 5 returns 120" in {
+    assert(120 == factorial.factorial(5))
+  }
+  "A condition" should "be correct if 0 returns 1" in {
+    assert(1 == factorial.factorial(0))
+  }
+  "A condition" should "not be correct if 6 returns 500" in {
+    assert(!(500 == factorial.factorial(6)))
+  }
 }

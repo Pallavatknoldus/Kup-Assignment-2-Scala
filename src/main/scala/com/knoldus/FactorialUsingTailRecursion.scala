@@ -4,16 +4,16 @@ import scala.annotation.tailrec
 
 class FactorialUsingTailRecursion {
 
-  def factorialUsingTail(n: Int): Int = {
+  def factorialUsingTail(element: Int): BigInt = {
     @tailrec
-    def innerFactorial(n: Int, counter: Int): Int = {
-      if(n >= 0) {  // When number is positive or 0.
-        if(n<=1) counter
-        else innerFactorial(n-1, n * counter) // Counter keep changing by multiplying value of n.
+    def innerFactorial(element: Int, counter: BigInt = 1): BigInt = {
+      if (element >= 0) { // When number is positive or 0.
+        if (element <= 1) counter
+        else innerFactorial(element - 1, element * counter) // Counter keep changing by multiplying value of n.
       }
       else 0 // When number is negative, Factorial of negative numbers is 0.
     }
-    innerFactorial(n, 1)
-  }
 
+    innerFactorial(element)
+  }
 }
